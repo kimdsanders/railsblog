@@ -1,0 +1,20 @@
+<h1>Listing myblogs</h1>
+
+
+    <% @myblogs.each do |myblog| %>
+        <%= myblog.created_at %><br>
+        <%= myblog.title %><br>
+        <%= myblog.body %><br>
+        <%= image_tag myblog.image_url, :width => 300 %><br>
+        <%= myblog.tag %><br>
+        <%= link_to 'Show', myblog %>
+        <%= link_to 'Edit', edit_myblog_path(myblog) %>
+        <%= link_to 'Destroy', myblog, method: :delete, data: { confirm: 'Are you sure?' } %><br><br>
+    <% end %>
+
+<br>
+
+
+
+
+<%= link_to 'New Myblog', new_myblog_path %>

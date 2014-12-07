@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @myblog.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @myblog.body %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <br>
+  <%= image_tag(@myblog.image_url, :width => 300) if @myblog.image.present? %>
+</p>
+
+<p>
+  <strong>Tag:</strong>
+  <%= @myblog.tag %>
+</p>
+
+<p>
+  <strong>Date</strong>
+  <%= @myblog.created_at %>
+</p>
+
+<%= link_to 'Edit', edit_myblog_path(@myblog) %> |
+<%= link_to 'Back', myblogs_path %>
+
